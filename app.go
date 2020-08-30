@@ -17,7 +17,7 @@ func main() {
 	app.Get("/", func(c *fiber.Ctx) {
 		filepath := c.Query("path")
 		d := zipimg.MakeThumbnail(filepath, filepath)
-		if d {
+		if d == true {
 			c.JSON(fiber.Map{
 				"status": 0,
 			})
